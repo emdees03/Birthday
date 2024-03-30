@@ -1,0 +1,108 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background-color: #fdbf00;
+}
+.card {
+    width: 640px;
+    height: 400px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    perspective: 1200px;
+    transition: 1s;
+}
+.card:hover {
+    transform: rotate(-5deg);
+}
+.card:hover .outside {
+    transform: rotateY(-130deg);
+}
+.outside,
+.inside {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.inside {
+    background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+    line-height: 1;
+    padding: 0 20px;
+    text-align: justify;
+}
+.outside {
+    transform-style: preserve-3d;
+    z-index: 1;
+    transform-origin: left;
+    transition: 2s;
+    cursor: pointer;
+}
+.front,
+.back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+.front {
+    background-color: #ffffff;
+}
+.back {
+    transform: rotateY(180deg);
+    background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+}
+.image-container {
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.outside p {
+    font-size: 23px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    letter-spacing: 6px;
+    color: #000046;
+}
+.inside h1 {
+    font-size: 120px;
+    line-height: 120px;
+}
+.ornaments {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.star, .balloon, .cake {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.star {
+    background-image: url('https://image.flaticon.com/icons/png/512/3113/3113908.png');
+}
+.balloon {
+    background-image: url('https://image.flaticon.com/icons/png/512/126/126472.png');
+}
+.cake {
+    background-image: url('https://image.flaticon.com/icons/png/512/1436/1436387.png');
+}
